@@ -19,9 +19,3 @@ O template utilizado foi o **Template 2**, conforme indicado nas instruções do
 ## 📁 Estrutura do projeto
 A estrutura segue o modelo sugerido no template, com adaptação das informações pessoais e layout.
 
-## 🚀 Como executar o projeto
-
-1. Clona o repositório (assim que o publicares no GitHub)
-2. Instala as dependências:
-   ```bash
-   npm install
