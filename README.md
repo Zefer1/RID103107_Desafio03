@@ -19,3 +19,7 @@ O template utilizado foi o **Template 2**, conforme indicado nas instruções do
 ## 📁 Estrutura do projeto
 A estrutura segue o modelo sugerido no template, com adaptação das informações pessoais e layout.
 
+## 📜 Histórico de Versionamento
+
+- **version-1** (branch): estado inicial do Desafio 3 – menu mobile, navegação e layout base.  
+- **main** (branch): melhorias do Desafio 4 – dark mode com persistência e ajuste de cores em light-mode.
