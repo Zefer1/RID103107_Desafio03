@@ -14,7 +14,7 @@
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;
     padding: 20px;
-    color: white;
+    color: inherit;
     width: 240px;
   }
 
@@ -68,6 +68,7 @@
   height: 4px;
   background-color: white;
   z-index: 1;
+  color: inherit;
 }
 
 .event {
@@ -75,10 +76,7 @@
   position: relative;
   text-align: center;
   width: 20%;
-  color: white;
-  
- 
-  
+  color: inherit;
 }
 
 .dot {

@@ -80,3 +80,30 @@ background-color: #FFFFFF;
     flex-direction: column;
   }
 }
+
+/* ─── Dark / Light mode ───────────────────────────────────────── */
+
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Transição suave ao mudar de tema */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body.light-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+}
