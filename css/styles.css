@@ -1,0 +1,270 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 100%; 
+  }
+  
+  body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #f0f2f5; 
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem; 
+  }
+  
+  
+  .container {
+    width: 100%;
+    max-width: 500px; /* no mobile, ocupa toda largura até 500px */
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /*3) HEADER (título)*/
+  .header {
+    background-color: #fafbfc;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .header__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f1a38; 
+  }
+  
+  /*4) SEÇÃO DE NOVA TAREFA (formulário)*/
+  .new-task {
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+  
+  .task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* espaço vertical entre inputs e botão em mobile */
+  }
+  
+  .task-form__input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccd0d5;
+    border-radius: 8px;
+    color: #333;
+  }
+  
+  .task-form__input::placeholder {
+    color: #a0a0a0;
+  }
+  
+  .task-form__button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-color: #2979ff; 
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .task-form__button:hover {
+    background-color: #1c5ecc;
+  }
+  
+  /*5) LISTA DE TAREFAS (tarefas em cards) */
+  .tasks {
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+  
+  .tasks__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* espaço entre cada card em mobile */
+  }
+  
+  /* Cada card de tarefa */
+  .task-card {
+    background-color: #fdfefe;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* espaço interno vertical */
+  }
+  
+  /* Linha superior do card: título (h2) */
+  .task-card__title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+  
+  /* Container para tag + data */
+  .task-card__info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem; /* gap vertical 0.5rem, horizontal 1rem */
+    font-size: 0.85rem;
+    color: #5a5a5a;
+  }
+  
+  
+  .task-card__tag {
+    background-color: #e8f2ff; /* leve tom azul-claro */
+    color: #2979ff; 
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    text-transform: lowercase;
+    font-weight: 500;
+  }
+  
+  
+  .task-card__date {
+    color: #7a7a7a;
+  }
+  
+  /* Botão “Concluir” dentro do card */
+  .task-card__actions {
+    align-self: flex-end; /* alinha botão no canto direito */
+  }
+  
+  .task-card__btn-complete {
+    background-color: #2979ff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .task-card__btn-complete:hover {
+    background-color: #1c5ecc;
+  }
+  
+  /* Estado “concluída” (quando a tarefa já está completa) */
+  .task-card.completed {
+    opacity: 0.6;
+  }
+  
+  .task-card.completed .task-card__title {
+    text-decoration: line-through;
+    color: #7a7a7a;
+  }
+  
+  /* Ícone de “check” para tarefas concluídas */
+  /* Vamos usar um pseudo-elemento para indicar o check no canto */
+  .task-card.completed .task-card__actions::before {
+    content: '✔';
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #00c853; 
+  }
+  
+  /* Ocultar o botão “Concluir” quando já estiver concluída */
+  .task-card.completed .task-card__btn-complete {
+    display: none;
+  }
+  
+  /* 6) FOOTER (contador de tarefas)*/
+  .footer {
+    background-color: #fafbfc;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .footer__text {
+    font-size: 0.95rem;
+    color: #4a4a4a;
+  }
+  
+  /* 7) MEDIA QUERY PARA DESKTOP (a partir de 768px)*/
+  @media (min-width: 768px) {
+    body {
+      padding: 2rem; /* um pouco mais de espaço nas laterais no desktop */
+    }
+  
+    .container {
+      max-width: 700px; /* aumentar largura para o desktop */
+    }
+  
+    /* Formulário: inputs lado a lado + botão ao final */
+    .task-form {
+      flex-direction: row;
+      gap: 0.75rem;
+      align-items: center;
+    }
+  
+    .task-form__input--title {
+      flex: 2;
+    }
+  
+    .task-form__input--label {
+      flex: 1;
+    }
+  
+    .task-form__button {
+      width: 3.5rem;
+      padding: 0.6rem;
+      font-size: 1.25rem;
+    }
+  
+    /* Lista de tasks: reduzir gap vertical */
+    .tasks__list {
+      gap: 0.5rem;
+    }
+  
+    /* Card: agora fica numa só linha: texto/info à esquerda e botão à direita */
+    .task-card {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .task-card__content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  
+    .task-card__actions {
+      margin-left: 1rem;
+    }
+  
+    /* Ajustar fontes para desktop */
+    .header__title {
+      font-size: 2rem;
+    }
+  
+    .task-card__title {
+      font-size: 1.1rem;
+    }
+  
+    .task-card__info {
+      gap: 0.5rem 1rem;
+    }
+  }
+  

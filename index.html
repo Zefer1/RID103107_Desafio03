@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Board de Tarefas DNC</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Container principal (poderia ser <main>, mas utilizei <div class="container"> para centralizar melhor) -->
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="header">
+      <h1 class="header__title">Board de tarefas</h1>
+    </header>
+
+    <!-- Formulário para inserir nova tarefa e etiqueta -->
+    <section class="new-task">
+      <form id="task-form" class="task-form">
+        <input
+          type="text"
+          id="task-title"
+          class="task-form__input task-form__input--title"
+          placeholder="Nome da tarefa"
+          required
+        />
+        <input
+          type="text"
+          id="task-label"
+          class="task-form__input task-form__input--label"
+          placeholder="Etiqueta"
+          required
+        />
+        <button type="submit" class="task-form__button">+</button>
+      </form>
+    </section>
+
+    <!-- Lista de cards de tarefa -->
+    <section class="tasks">
+      <ul id="task-list" class="tasks__list">
+        <!-- Cada li será gerado dinamicamente via JavaScript. Exemplo estático abaixo -->
+        <!--
+        <li class="task-card">
+          <div class="task-card__content">
+            <h2 class="task-card__title">Implementar tela de listagem de tarefas</h2>
+            <div class="task-card__info">
+              <span class="task-card__tag">frontend</span>
+              <span class="task-card__date">Criado em: 21/08/2024</span>
+            </div>
+          </div>
+          <div class="task-card__actions">
+            <button class="task-card__btn-complete">Concluir</button>
+          </div>
+        </li>
+        -->
+      </ul>
+    </section>
+
+ 
+    <footer class="footer">
+      <span id="task-counter" class="footer__text">0 tarefas pendentes</span>
+    </footer>
+  </div>
+
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
